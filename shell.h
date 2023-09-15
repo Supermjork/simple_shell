@@ -6,5 +6,4 @@
 #include <unistd.h>
 
 int non_interactive(char **argv);
-extern char **environ;
 #endif
