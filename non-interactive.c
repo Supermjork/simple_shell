@@ -1,10 +1,14 @@
+#include "shell.h"
+
 /**
- * non_interactive - idk man
+ * non_interactive - Doesn't interact or smth
  *
- * Return: ded
+ * @av: argooments
+ *
+ * Return: Exit Status
  */
 
-int non_interactive(int ac, char **av)
+int non_interactive(char **av)
 {
 	return (0);
 }

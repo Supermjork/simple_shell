@@ -5,4 +5,6 @@
 #include <stdio.h>
 #include <unistd.h>
 
+int non_interactive(char **argv);
+
 #endif
