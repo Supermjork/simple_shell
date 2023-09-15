@@ -9,5 +9,8 @@
 extern char **environ;
 
 int non_interactive(char **argv);
+int _strlen(const char *s);
+int _puts(char *s);
+int _putchar(char s);
 
 #endif
