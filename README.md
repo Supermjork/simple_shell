@@ -7,4 +7,4 @@
   - [ ] Handle not found files and print an error
 	use write maybe? oldschool amirite
   - [ ] Execute programs with `execve`
-  
+

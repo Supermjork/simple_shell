@@ -18,7 +18,7 @@ int non_interactive(char **av)
 		_puts("sh: 0: cannot open ");
 		_puts(*av);
 		_puts(": No such file");
-		return(-1);
+		return (-1);
 	}
 
 	if (access(*av, X_OK) == -1)
@@ -27,7 +27,7 @@ int non_interactive(char **av)
 		_puts("sh: 0: cannot open ");
 		_puts(*av);
 		_puts(": permission denied");
-		return(-1);
+		return (-1);
 	}
 	if (access(*av, F_OK || X_OK) == 0)
 	{
