@@ -19,6 +19,6 @@ int non_interactive(char **av)
 		/* permission denied*/
 		return(-1);
 	if (access(*av, F_OK || X_OK) == 0)
-		execv(*av, (av + 1), environ);
+		execv(*av, (av + 1));
 	return (0);
 }
