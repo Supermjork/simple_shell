@@ -1,16 +1,15 @@
 #include "shell.h"
 
 /**
- * shell - BIG MAN
+ * main - core of the shell
  *
  * @argc: Number of Argooments
  * @argv: Argooments
- * @env: Environment thang
  *
- * Return: Death
+ * Return: exit status
  */
 
-int shell(int argc, char **argv, char **env)
+int main(int argc, char **argv)
 {
 	if (argc == 1)
 	{
