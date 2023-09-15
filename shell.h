@@ -6,7 +6,7 @@
 #include <stdio.h>
 #include <unistd.h>
 
+extern char **environ;
 int non_interactive(char **argv);
-
 
 #endif
