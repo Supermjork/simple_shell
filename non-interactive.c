@@ -1,9 +1,11 @@
 #include "shell.h"
 
 /**
- * non_interactive - Doesn't interact or smth
+ * non_interactive - non interactive mode
  *
- * @av: argooments
+ * Description: this when you pass a single file to the shell to execute
+ * Scripts tbd
+ * @av: arguments
  *
  * Return: Exit Status
  */
