@@ -21,7 +21,7 @@ int non_interactive(char **av)
 		return (-1);
 	}
 
-	if (access(*av, X_OK) == -1)
+	else if (access(*av, X_OK) == -1)
 	{
 		/* permission denied */
 		_puts("sh: 0: cannot open ");
@@ -29,9 +29,9 @@ int non_interactive(char **av)
 		_puts(": permission denied");
 		return (-1);
 	}
-	if (access(*av, F_OK || X_OK) == 0)
+	else if (access(*av, F_OK || X_OK) == 0)
 	{
 		execv(*av, (av + 1));
+		return (0);
 	}
-	return (0);
 }

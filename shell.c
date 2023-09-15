@@ -13,7 +13,7 @@ int main(int argc, char **argv)
 {
 	if (argc > 1)
 	{
-		non_interactive(argv);
+		return (non_interactive(argv));
 	}
 
 	return (0);
