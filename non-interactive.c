@@ -12,5 +12,13 @@
 
 int non_interactive(char **av)
 {
+	if (access(*av, F_OK) == -1)
+		/* cannot open <file>: No such file*/
+		return(-1);
+	if (access(*av, X_OK) == -1)
+		/* permission denied*/
+		return(-1);
+	if (access(*av, F_OK || X_OK) == 0)
+		execv(*av, (av + 1), environ);
 	return (0);
 }
