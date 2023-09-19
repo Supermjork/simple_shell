@@ -12,38 +12,10 @@
  * Return: Exit Status
  */
 
-int non_interactive(char **av)
+int non_interactive(char **args)
 {
-	pid_t child;
-	if (access(*av, F_OK) == -1)
-	{
-		/* cannot open <file>: No such file */
-		_puts("sh: 0: cannot open ");
-		_puts(*av);
-		_puts(": No such file");
-		return (-1);
-	}
-
-	else if (access(*av, X_OK) == -1)
-	{
-		/* permission denied */
-		_puts("sh: 0: cannot open ");
-		_puts(*av);
-		_puts(": permission denied");
-		return (-1);
-	}
-	else if (access(*av, F_OK || X_OK) == 0)
-	{
-		/* TODO fix this */
-		child = fork();
-		if (child == 0)
-		{
-			if (execve(*av, av, NULL) == -1)
-				perror("Error:");
-
-		}
-		return (0);
-	}
-	else /*???*/
+	if (access(*args, F_OK) == 0)
+		return (exec_child(args, environ));
+	else
 		return (-1);
 }
