@@ -13,7 +13,7 @@ int exec_child(char **args, char **env)
 	child = fork();
 	if (child == 0)
 	{
-		if (execve(*args, args, NULL) == -1)
+		if (execve(*args, args, env) == -1)
 			perror("hsh");
 	}
 }
