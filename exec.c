@@ -14,6 +14,10 @@ int exec_child(char **args, char **env)
 	if (child == 0)
 	{
 		if (execve(*args, args, env) == -1)
+		{
 			perror("hsh");
+			return (-1);
+		}
+		return (0);
 	}
 }

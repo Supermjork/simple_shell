@@ -15,24 +15,24 @@ int main(int argc, char **argv)
 
 	pid_t child_pid;
 	int status;
-	if (argc < 2)
+	if (argc == 1)
+	{
+		/* TODO make interactive */
 		return (0);
-
+	}
+	else
+	{
 	child_pid = fork();
 	if (child_pid == -1)
 	{
-        perror("Error:");
+        perror("hsh");
 		return (1);
 	}
 	if (child_pid == 0)
-    {
-		if (execve(argv[0], argv + 1, NULL) == -1)
-		{
-			perror("Error:");
-			return (-1);
-		}
-	}
+		exec_child(argv, environ);
 	else
 		wait(&status);
+	}
+
 	return (0);
 }
