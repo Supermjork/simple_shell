@@ -12,5 +12,6 @@ int non_interactive(char **argv);
 int _strlen(const char *s);
 int _puts(char *s);
 int _putchar(char s);
+int exec_child(char **args, char **env);
 
 #endif
