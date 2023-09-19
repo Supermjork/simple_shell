@@ -1,4 +1,5 @@
 #include "shell.h"
+#include "sys/wait.h"
 
 /**
  * exec_child: exec this
@@ -8,16 +9,10 @@
  */
 int exec_child(char **args, char **env)
 {
-	pid_t child;
-
-	child = fork();
-	if (child == 0)
+	if (execve(*args, args + 1, env) == -1)
 	{
-		if (execve(*args, args, env) == -1)
-		{
-			perror("hsh");
-			return (-1);
-		}
-		return (0);
+		perror("hsh");
+		return (-1);
 	}
+	return (0);
 }
