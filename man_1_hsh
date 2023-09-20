@@ -1,0 +1,15 @@
+.TH man "SEP 20 2023" "0.1" "hsh simple shell project"
+
+.SH NAME
+	hsh - Simple shell: command line shell
+
+.SH SYNPOSIS
+	hsh [filename]
+
+.SH COPYRIGHT
+	Public domain, no copyright protection
+
+.SH DESCRIPTION
+
+	this is literally just a command line shell project to learn more about how the system works
+	it reads and executes basics commands like "sh" would mostly
