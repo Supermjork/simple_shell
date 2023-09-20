@@ -36,13 +36,20 @@ char **strsplit(char *str, char *delim)
 {
 	char *tofree;
 	char *token;
-	char **args;
+	char **str_array;
 
 	tofree = str;
 
-	while ((token = strsep(&str, delim)) != NULL)
+	while ((token = strsep(&tofree, delim)) != NULL)
+	{
 		/*TODO copy paste strcontains here and use it :)*/
-
+		*str_array = token;
+		/* wat de fuq*/
+	}
 
 	free(tofree);
+
+	return (str_array);
+	/* ya happy? */
+	/*fuck if i know*/
 }

@@ -14,4 +14,6 @@ int _puts(char *s);
 int _putchar(char s);
 int exec_child(char **args, char **env);
 int interactive_mode(void);
+char **strsplit(char *str, char *delim);
+
 #endif
