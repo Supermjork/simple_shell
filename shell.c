@@ -15,9 +15,14 @@ int main(int argc, char **argv)
 
 	pid_t child_pid;
 	int status;
+
 	if (argc == 1)
 	{
 		/* TODO make interactive */
+		while (1)
+		{
+			interactive_mode();
+		}
 		return (0);
 	}
 	else
@@ -25,7 +30,7 @@ int main(int argc, char **argv)
 	child_pid = fork();
 	if (child_pid == -1)
 	{
-        perror("hsh");
+		perror("hsh");
 		return (1);
 	}
 	if (child_pid == 0)
